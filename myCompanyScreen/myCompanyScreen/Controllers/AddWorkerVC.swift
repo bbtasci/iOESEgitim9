@@ -23,12 +23,17 @@ class AddWorkerVC: UIViewController {
     // MARK: - PROPERTIES
     
     weak var delegate : AddWorkerVCDelegate?
+    let jobPositions = ["Assistant", "Director"]
+    var pickerViewJobPosition = UIPickerView()
     
     // MARK: - LIFE CYCLE METHODS
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pickerViewJobPosition.delegate = self
+        pickerViewJobPosition.dataSource = self
+        enterJobPositionTF.inputView = pickerViewJobPosition
         // enterName text field view change
         enterNameTF.layer.borderColor = UIColor.blue.cgColor
         enterNameTF.layer.borderWidth = 1
@@ -95,3 +100,20 @@ class AddWorkerVC: UIViewController {
     }
 }
 
+extension AddWorkerVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return jobPositions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return jobPositions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        enterJobPositionTF.text = jobPositions[row]
+    }
+}
