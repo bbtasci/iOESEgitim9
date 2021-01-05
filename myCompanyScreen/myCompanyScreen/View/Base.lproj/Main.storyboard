@@ -11,7 +11,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="myCompanyScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomepageViewController" id="BYZ-38-t0r" customClass="HomepageViewController" customModule="myCompanyScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,14 +207,14 @@
                     <navigationItem key="navigationItem" title="Home" id="Ouw-iy-jyY"/>
                     <connections>
                         <outlet property="addIncomeButton" destination="tbh-U9-nKP" id="f2K-jy-s0f"/>
+                        <outlet property="addNewEmployeeButton" destination="p6S-zB-NBH" id="hra-KT-2Ld"/>
                         <outlet property="addOutcomeButton" destination="vr0-3R-GCn" id="XpL-Pk-iMJ"/>
-                        <outlet property="addWorkerButton" destination="p6S-zB-NBH" id="hra-KT-2Ld"/>
-                        <outlet property="compNameLabel" destination="9oC-Kf-GW8" id="lmn-7F-cvh"/>
                         <outlet property="companyBudgetLabel" destination="usJ-aE-OE6" id="KQg-Ie-jbp"/>
-                        <outlet property="enterpriceTF" destination="3nm-GI-z45" id="Cw0-oD-KcQ"/>
-                        <outlet property="numberOfWorkerLabel" destination="PuF-gx-5R4" id="RQL-Pu-6os"/>
+                        <outlet property="companyNameLabel" destination="9oC-Kf-GW8" id="lmn-7F-cvh"/>
+                        <outlet property="employeeListButton" destination="aGf-hy-ht8" id="5Zm-db-UVT"/>
+                        <outlet property="enterPriceTextField" destination="3nm-GI-z45" id="Cw0-oD-KcQ"/>
+                        <outlet property="numberOfEmployeesButton" destination="PuF-gx-5R4" id="RQL-Pu-6os"/>
                         <outlet property="paySalaryButton" destination="j70-xe-2dM" id="lnR-5U-ogv"/>
-                        <outlet property="workerListButton" destination="aGf-hy-ht8" id="5Zm-db-UVT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -224,7 +224,7 @@
         <!--Add Worker Screen-->
         <scene sceneID="U9m-kq-DZI">
             <objects>
-                <viewController storyboardIdentifier="AddWorkerVC" id="QIZ-Q4-UCW" userLabel="Add Worker Screen" customClass="AddWorkerVC" customModule="myCompanyScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEmployeeViewController" id="QIZ-Q4-UCW" userLabel="Add Worker Screen" customClass="AddEmployeeViewController" customModule="myCompanyScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eq6-pG-4FT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,7 +287,7 @@
                                             <color key="titleColor" systemColor="systemYellowColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="addWorkerButtonPressed2:" destination="QIZ-Q4-UCW" eventType="touchUpInside" id="6UD-Ua-yxz"/>
+                                            <action selector="addNewEmployeeButtonTouched:" destination="QIZ-Q4-UCW" eventType="touchUpInside" id="6UD-Ua-yxz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -310,10 +310,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="0MZ-Xr-h5a"/>
                     <connections>
-                        <outlet property="addWorkerButton2" destination="3bU-IG-075" id="Ru8-hb-gFW"/>
-                        <outlet property="enterAgeTF" destination="loY-pa-D83" id="C0j-U5-Wy9"/>
-                        <outlet property="enterJobPositionTF" destination="jKQ-gz-2jM" id="vIh-L2-hKp"/>
-                        <outlet property="enterNameTF" destination="gxG-ub-Lcu" id="xCI-D6-0EX"/>
+                        <outlet property="addNewEmployeeButton" destination="3bU-IG-075" id="Ru8-hb-gFW"/>
+                        <outlet property="ageTextField" destination="loY-pa-D83" id="C0j-U5-Wy9"/>
+                        <outlet property="jobPositionTextField" destination="jKQ-gz-2jM" id="vIh-L2-hKp"/>
+                        <outlet property="nameTextField" destination="gxG-ub-Lcu" id="xCI-D6-0EX"/>
+                        <outlet property="titleLabel" destination="zPy-Qr-4Tx" id="1uC-E6-8ec"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OL8-yE-b2m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -323,7 +324,7 @@
         <!--Worker List Screen-->
         <scene sceneID="szC-QD-2Ya">
             <objects>
-                <viewController storyboardIdentifier="WorkerListVC" id="T2q-gG-42r" userLabel="Worker List Screen" customClass="WorkerListVC" customModule="myCompanyScreen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmployeeListViewController" id="T2q-gG-42r" userLabel="Worker List Screen" customClass="EmployeeListViewController" customModule="myCompanyScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l2u-BT-On4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,9 +372,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="VLM-ol-Ex4"/>
                     <connections>
+                        <outlet property="employeeInfoLabel" destination="fUF-aD-8pU" id="FZy-RX-hEA"/>
                         <outlet property="tableView" destination="2QF-md-0vy" id="isb-zt-0PJ"/>
                         <outlet property="tableViewInfoLabel" destination="Jii-TR-StU" id="uuZ-C8-x35"/>
-                        <outlet property="workerInfoLabel" destination="fUF-aD-8pU" id="FZy-RX-hEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHp-rl-YT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

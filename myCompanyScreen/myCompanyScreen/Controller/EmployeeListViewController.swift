@@ -7,17 +7,17 @@
 
 import UIKit
 
-final class WorkerListVC: UIViewController {
+final class EmployeeListViewController: UIViewController {
     
     // MARK: - OUTLETS
     
-    @IBOutlet weak var workerInfoLabel: UILabel!
+    @IBOutlet weak var employeeInfoLabel: UILabel!
     @IBOutlet weak var tableViewInfoLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - PROPERTIES
     
-    var workers: [EmployeeP] = []
+    var employees: [EmployeeP] = []
     
     // MARK: - LIFE CYCLE METHODS
     
@@ -32,7 +32,7 @@ final class WorkerListVC: UIViewController {
     }
     
     fileprivate func prepareAllLayers() {
-        prepareLayers(object: workerInfoLabel as Any)
+        prepareLayers(object: employeeInfoLabel as Any)
         prepareLayers(object: tableViewInfoLabel as Any)
         prepareLayers(object: tableView as Any)
         tableViewInfoLabel.text = "Name \t \t \t \t     Age \t \t \t \t   Salary" 
@@ -60,25 +60,25 @@ final class WorkerListVC: UIViewController {
 
 // MARK: - UITableViewDataSource Methods
 
-extension WorkerListVC: UITableViewDataSource {
+extension EmployeeListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return workers.count
+        return employees.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewWorkerList") as! TableViewWorkerList
-        cell.setCell(newWorker: workers[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewWorkerList") as! TableViewEmployeeList
+        cell.setCell(newWorker: employees[indexPath.row])
         return cell
     }
 }
 
 // MARK: - UITableViewDelegate Methods
 
-extension WorkerListVC: UITableViewDelegate {
+extension EmployeeListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

@@ -8,12 +8,12 @@
 import UIKit
 
 
-class TableViewWorkerList: UITableViewCell {
+class TableViewEmployeeList: UITableViewCell {
 
     // MARK: - OUTLETS
     
     @IBOutlet weak var cellLabel: UILabel!
-    @IBOutlet weak var cellView: TableViewWorkerList!
+    @IBOutlet weak var cellView: TableViewEmployeeList!
 
     // MARK: - LIFE CYCLE METHODS
     
