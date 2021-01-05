@@ -21,9 +21,9 @@
 		7A619D66258C7EBF00A44A54 /* CostProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619D65258C7EBF00A44A54 /* CostProtocol.swift */; };
 		7A619D6D258C818400A44A54 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A619D6C258C818400A44A54 /* AddEmployeeViewController.swift */; };
 		7AC1BD8F2597F58000F4F6DD /* TableViewEmployeeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC1BD8D2597F58000F4F6DD /* TableViewEmployeeList.swift */; };
-		7AC1BD902597F58000F4F6DD /* TableViewWorkerList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC1BD8E2597F58000F4F6DD /* TableViewWorkerList.xib */; };
+		7AC1BD902597F58000F4F6DD /* TableViewEmployeeList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC1BD8E2597F58000F4F6DD /* TableViewEmployeeList.xib */; };
 		7AE27BC5258E65FF0093D3C0 /* CompanyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE27BC4258E65FF0093D3C0 /* CompanyBuilder.swift */; };
-		7AE485052597E5240055AA8C /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE485042597E5240055AA8C /* EmployeeListViewController.swift */; };
+		7AE485052597E5240055AA8C /* CompanyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE485042597E5240055AA8C /* CompanyDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,9 +42,9 @@
 		7A619D65258C7EBF00A44A54 /* CostProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostProtocol.swift; sourceTree = "<group>"; };
 		7A619D6C258C818400A44A54 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 		7AC1BD8D2597F58000F4F6DD /* TableViewEmployeeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewEmployeeList.swift; sourceTree = "<group>"; };
-		7AC1BD8E2597F58000F4F6DD /* TableViewWorkerList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewWorkerList.xib; sourceTree = "<group>"; };
+		7AC1BD8E2597F58000F4F6DD /* TableViewEmployeeList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewEmployeeList.xib; sourceTree = "<group>"; };
 		7AE27BC4258E65FF0093D3C0 /* CompanyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyBuilder.swift; sourceTree = "<group>"; };
-		7AE485042597E5240055AA8C /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
+		7AE485042597E5240055AA8C /* CompanyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				7AC1BD8D2597F58000F4F6DD /* TableViewEmployeeList.swift */,
-				7AC1BD8E2597F58000F4F6DD /* TableViewWorkerList.xib */,
+				7AC1BD8E2597F58000F4F6DD /* TableViewEmployeeList.xib */,
 			);
 			path = TableViewWorkerList;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 			children = (
 				7A4BE3E8258B318E00289778 /* HomepageViewController.swift */,
 				7A619D6C258C818400A44A54 /* AddEmployeeViewController.swift */,
-				7AE485042597E5240055AA8C /* EmployeeListViewController.swift */,
+				7AE485042597E5240055AA8C /* CompanyDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A4BE3F1258B318E00289778 /* LaunchScreen.storyboard in Resources */,
-				7AC1BD902597F58000F4F6DD /* TableViewWorkerList.xib in Resources */,
+				7AC1BD902597F58000F4F6DD /* TableViewEmployeeList.xib in Resources */,
 				7A4BE3EE258B318E00289778 /* Assets.xcassets in Resources */,
 				7A4BE3EC258B318E00289778 /* Main.storyboard in Resources */,
 			);
@@ -222,7 +222,7 @@
 				7A619D6D258C818400A44A54 /* AddEmployeeViewController.swift in Sources */,
 				7A619D63258C7EB400A44A54 /* Director.swift in Sources */,
 				7A4BE3E5258B318E00289778 /* AppDelegate.swift in Sources */,
-				7AE485052597E5240055AA8C /* EmployeeListViewController.swift in Sources */,
+				7AE485052597E5240055AA8C /* CompanyDetailsViewController.swift in Sources */,
 				7A4BE3E7258B318E00289778 /* SceneDelegate.swift in Sources */,
 				7A619D60258C7EAC00A44A54 /* Assistant.swift in Sources */,
 				7AC1BD8F2597F58000F4F6DD /* TableViewEmployeeList.swift in Sources */,

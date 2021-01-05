@@ -7,12 +7,14 @@
 
 import UIKit
 
-final class EmployeeListViewController: UIViewController {
+final class CompanyDetailsViewController: UIViewController {
     
     // MARK: - OUTLETS
     
-    @IBOutlet weak var employeeInfoLabel: UILabel!
-    @IBOutlet weak var tableViewInfoLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var employeeNameLabel: UILabel!
+    @IBOutlet weak var employeeAgeLabel: UILabel!
+    @IBOutlet weak var employeeSalaryLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - PROPERTIES
@@ -32,18 +34,22 @@ final class EmployeeListViewController: UIViewController {
     }
     
     fileprivate func prepareAllLayers() {
-        prepareLayers(object: employeeInfoLabel as Any)
-        prepareLayers(object: tableViewInfoLabel as Any)
+        prepareLayers(object: titleLabel as Any)
+        prepareLayers(object: employeeNameLabel as Any)
+        employeeNameLabel.text = "Name"
+        prepareLayers(object: employeeAgeLabel as Any)
+        employeeAgeLabel.text = "Age"
+        prepareLayers(object: employeeSalaryLabel as Any)
+        employeeSalaryLabel.text = "Salary"
         prepareLayers(object: tableView as Any)
-        tableViewInfoLabel.text = "Name \t \t \t \t     Age \t \t \t \t   Salary" 
     }
     
     fileprivate func prepareTableView() {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
-        tableView.register(UINib(nibName: "TableViewWorkerList", bundle: nil), forCellReuseIdentifier: "TableViewWorkerList")
+        //tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: "TableViewEmployeeList", bundle: nil), forCellReuseIdentifier: "TableViewEmployeeList")
         tableView.reloadData()
     }
     
@@ -60,7 +66,7 @@ final class EmployeeListViewController: UIViewController {
 
 // MARK: - UITableViewDataSource Methods
 
-extension EmployeeListViewController: UITableViewDataSource {
+extension CompanyDetailsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -70,7 +76,7 @@ extension EmployeeListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewWorkerList") as! TableViewEmployeeList
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewEmployeeList") as! TableViewEmployeeList
         cell.setCell(newWorker: employees[indexPath.row])
         return cell
     }
@@ -78,7 +84,7 @@ extension EmployeeListViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate Methods
 
-extension EmployeeListViewController: UITableViewDelegate {
+extension CompanyDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

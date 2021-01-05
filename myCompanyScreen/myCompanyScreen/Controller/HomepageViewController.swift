@@ -91,18 +91,18 @@ class HomepageViewController: UIViewController, AddEmployeeViewControllerDelegat
         }
     }
     
-    @IBAction func addWorkerButtonPressed(_ sender: Any) {
+    @IBAction func addNewEmployeeButtonTouched(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let addEmployeeViewController = storyboard.instantiateViewController(identifier: "AddEmployeeViewController") as! AddEmployeeViewController
         addEmployeeViewController.delegate = self
         self.navigationController?.pushViewController(addEmployeeViewController, animated: true)
     }
     
-    @IBAction func workerListButtonPressed(_ sender: Any) {
+    @IBAction func employeeListButtonTouched(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let employeeListViewController = storyboard.instantiateViewController(identifier: "EmployeeListViewController") as! EmployeeListViewController
-        employeeListViewController.employees =  company1.getCompanyNew().getWorkerArray()
-        self.navigationController?.pushViewController(employeeListViewController, animated: true)
+        let companyDetailsViewController = storyboard.instantiateViewController(identifier: "CompanyDetailsViewController") as! CompanyDetailsViewController
+        companyDetailsViewController.employees =  company1.getCompanyNew().getWorkerArray()
+        self.navigationController?.pushViewController(companyDetailsViewController, animated: true)
     }
     
     // MARK: - METHODS

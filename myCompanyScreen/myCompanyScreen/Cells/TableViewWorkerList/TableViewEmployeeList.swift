@@ -19,26 +19,32 @@ class TableViewEmployeeList: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        prepareLayer(object: cellLabel as Any)
+        prepareUI()
+        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    fileprivate func prepareUI() {
+        prepareLayer(object: cellLabel as Any)
+        prepareLayer(object: cellView as Any)
     }
     
-    func prepareLayer(object: Any) {
+    fileprivate func prepareLayer(object: Any) {
         if let object = object as? UIView {
+            object.layer.cornerRadius = 10
+            object.layer.masksToBounds = true
+        } else if let object = object as? UILabel {
             object.layer.cornerRadius = 10
             object.layer.masksToBounds = true
         }
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
     // MARK: - METHODS
     
     func setCell (newWorker: EmployeeP) {
-        cellLabel.text = newWorker.name + "\t \t \t \t " + String (newWorker.age) + "\t \t \t \t \t     " + String(newWorker.getCost())
+        cellLabel.text = newWorker.name + "\t \t \t \t \t" + String (newWorker.age) + " \t \t \t \t" + "$\(String(newWorker.getCost()))"
     }
-
 }
